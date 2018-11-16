@@ -1,0 +1,24 @@
+{
+  "arr": [
+    {
+      "id": "00",
+      "name": "New Book",
+      "data": "0000",
+      "author": "Mc Laren",
+      "stock": "Yes",
+      "return_date": null,
+      "surname": null,
+      "name_t": null
+    },
+    {
+      "id": "232",
+      "name": "War",
+      "data": "789",
+      "author": "12312",
+      "stock": "No",
+      "return_date": "2018-12-8",
+      "surname": "Mih",
+      "name_t": "Y"
+    }
+  ]
+}

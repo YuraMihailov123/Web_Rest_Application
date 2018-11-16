@@ -1,0 +1,68 @@
+extends layout
+
+block content
+    h1= title
+    //p #{title}
+        //input#butt(type="button" value="Add book" onclick='toAddBook()')
+    form(method="get" action="/")
+        button(type="submit" id="buttBack") Get back
+
+    p Filter out:
+      button(type="button" id="b1" ) None
+      button(type="button" id="b2" ) By return date
+      button(type="button" id="b3" ) By availability
+
+    table
+        for book in books
+            tr
+                if(filter===0)
+                    td Name of book:
+                        a(href="/book/" + book["id"])=book["name"]
+                    td Author: #{book["author"]}
+                    td Date: #{book["data"]}
+                    td ID: #{book["id"]}
+
+                    if (book["stock"] === "Yes")
+                        td In stock: Yes
+                    else
+                        if (book["return_date"] !== null)
+                        -  data = new Date(book["return_date"])
+                        -  data_day = data.getDate()
+                        -  data_month = data.getMonth() + 1
+                        -  data_year = data.getFullYear()
+                        td #{data_day}-#{data_month}-#{data_year}
+                        if (new Date(book["return_date"]) < new Date() && book["return_date"] != null && book["stock"] !== "Yes")
+                            td Expired
+                        else
+                            td -
+                    td
+                        button(name="Delete" type="button" id=book["id"]) Delete
+
+                if(filter === 2)
+                    if(book["stock"] === "Yes")
+                        td Name of book:
+                            a(href="/book/" + book["id"])=book["name"]
+                        td Author: #{book["author"]}
+                        td Date: #{book["data"]}
+                        td ID: #{book["id"]}
+                        td In stock: Yes
+                if(filter === 1)
+                    if(book["stock"] !== "Yes")
+                        td Name of book:
+                            a(href="/book/" + book["id"])=book["name"]
+                        td Author: #{book["author"]}
+                        td Date: #{book["data"]}
+                        td ID: #{book["id"]}
+
+                            if (book["return_date"] !== null)
+                            -  data = new Date(book["return_date"])
+                            -  data_day = data.getDate()
+                            -  data_month = data.getMonth() + 1
+                            -  data_year = data.getFullYear()
+                            td #{data_day}-#{data_month}-#{data_year}
+                        if (new Date(book["return_date"]) < new Date() && book["return_date"] != null && book["stock"] !== "Yes")
+                            td Expired
+
+
+    script
+        include ../public/javascripts/listBooks.js

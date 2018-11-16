@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    h1= title
+    //p #{title}
+    //<input type="button" id="buttAdd" value="Add book" onclick="addToJSONFile()">
+    //form(method="get" action="/")
+     //input#buttAdd(type="button" value="Add book")
+    button(type="submit" id="buttAdd") Add book
+    //script(src='./public/javascripts/booksAdditionToWindow.js')
+
+    p <textarea  placeholder ="ID" id="textInputID"></textarea>
+      p <textarea  placeholder ="Name" id="textInputName"></textarea>
+         p <textarea  placeholder ="Data" id="textInputData"></textarea>
+          p <textarea  placeholder ="Author" id="textInputA"></textarea>
+             //p <textarea  placeholder ="Stock" id="textInputS"></textarea>
+              //p <textarea  placeholder ="Return date" id="textInputR"></textarea>
+    form(method="get" action="/")
+        input(type="submit" value="Get back" id="getBackdel")
+    script
+        include ../public/javascripts/booksAdditionToWindow.js

@@ -1,0 +1,73 @@
+extends layout
+
+block content
+    h1= title
+    //p #{title}
+        //input#butt(type="button" value="Add book" onclick='toAddBook()')
+    form(method="get" action="/booksShow")
+      button(type="submit" id="buttBack") Get back
+
+    button(type="submit" id="buttSave") Save changes
+
+
+    table(class="table_card")
+        tr
+            td Name of book:
+            td
+                input(type=placeholder value=book["name"] id="1")
+
+        tr
+            td Author:
+            td
+                input(type=placeholder value=book["author"] id="2")
+        tr
+            td Date of publication:
+            td
+                input(type=placeholder value=book["data"] id="3")
+        tr
+            td ID of book:
+            td #{book["id"]}
+        tr
+            td In stock:
+            td #{book["stock"]}
+        tr
+        if(book["stock"]==="No")
+                td Surname:
+                td #{book["surname"]}
+                tr
+                td Name:
+                td #{book["name_t"]}
+                tr
+    if(book["stock"]==="Yes")
+        button(type="submit" id="buttTake" disabled = false) Take book
+        button(type="submit" id="buttPut" disabled=true) Put book
+    else
+        button(type="submit" id="buttTake" disabled=true) Take book
+        button(type="submit" id="buttPut" disabled=false) Put book
+    //aside(class="modal" id="modalChangeBook")
+
+    <div style="text-align: center" id="popupWin" class="modalwin">
+
+    <h2> Take book </h2>
+    <form>
+        section
+         form(id="change_book", action="#", method="post")
+            table
+                tr
+                    td Surname:
+                    td
+                        input(type="text" id="idSur")
+                tr
+                    td Name:
+                    td
+                        input(id="idN" type="text" )
+    td
+      <input type="button" value="Cancel" id="Cancel">
+    td
+        <input type="button" value="Take" id="Take">
+    </form>
+    </div>
+
+
+    script
+        include ../public/javascripts/bookIDjs.js

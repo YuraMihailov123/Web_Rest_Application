@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+    //input#butt(type="button" value="Add book" onclick='toAddBook()')
+    form(method="get" action="/AddBook")
+      button(type="submit" id="butt1") Add new book
+    form(method="get" action="/booksShow")
+      button(type="submit" id="butt2") Check the list of books
+    form(method="get" action="/DeleteBook")
+      button(type="submit" id="butt3") Delete book

@@ -1,0 +1,97 @@
+body {
+  padding: 50px;
+  font: 24px "Lucida Grande", Helvetica, Arial, sans-serif ;
+  color:white;
+  background-color: #ff8f2b;
+  //background-image: url('../images/backg.jpg');
+}
+.modalwin {
+  height: 300px;
+  width: 300px;
+  border: 3px outset gray;
+  background-color: #ff8f2b;
+  top: 20%; /* отступ сверху */
+  right: 0;
+  left: 0;
+  font-size: 14px;
+  margin: 0 auto;
+  z-index:2; /* поверх всех */
+  display: none;  /* сначала невидим */
+  position: fixed; /* фиксированное позиционирование, окно стабильно при прокрутке */
+  padding: 15px;
+  border: 1px solid #383838;
+}
+#shadow {
+  position: fixed;
+  width:100%;
+  height:100%;
+  z-index:1; /* поверх всех  кроме окна*/
+  background:#000;
+  opacity: 0.5; /*прозрачность*/
+  left:0;
+  top:0;
+}
+p{
+  font: 20px "Lucida Grande";
+}
+input{
+  height: 50px;
+  width: 150px;
+  background-color: #ffda8e;
+  font: 24px "Lucida Grande", Helvetica, Arial, sans-serif ;
+}
+#getBackdel{
+  margin-top: 10px;
+  margin-left: 10px
+}
+button{
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  height: 50px;
+  width: 150px;
+  background-color: #ffda8e;
+}
+
+#buttAdd{
+  height: 50px;
+  width: 150px;
+  background-color: #ffda8e;
+  //margin-left: 625px;
+}
+
+#dd{
+  height: 30px;
+  width: 80px;
+  background-color: #ffda8e;
+//margin-left: 625px;
+}
+h1{
+  font: 64px "Lucida Grande", Helvetica, Arial, sans-serif ;
+  text-align: left;
+}
+a {
+  color: #00B7FF;
+}
+select{
+  margin-top: 20px;
+  margin-left: 10px;
+  height: 30px;
+  width: 150px;
+}
+textarea{
+  height: 20px;
+  width: 200px;
+  resize: none;
+  text-align: center;
+  //margin-top: 600px;
+}
+td{
+  border: 1px solid white;
+  padding: 10px;
+  background-color: #3576ff;
+}
+#buttPut{
+  margin-left: 20px;
+}
